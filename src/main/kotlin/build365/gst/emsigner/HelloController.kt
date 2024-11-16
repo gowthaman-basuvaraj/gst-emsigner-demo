@@ -6,6 +6,7 @@ import javafx.collections.FXCollections
 import javafx.fxml.FXML
 import javafx.scene.control.Button
 import javafx.scene.control.Label
+import javafx.scene.control.TableView
 import javafx.scene.control.TextField
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
@@ -66,6 +67,7 @@ class HelloController {
         signBtn.styleClass.addAll("btn", "btn-primary")
         viewBtn.styleClass.addAll("btn", "btn-primary")
         pan.isEditable = false
+        certs.columnResizePolicy = TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS
         certs.columns.addAll(
             TableColumn2<Cert, String>("Common Name").apply {
                 setCellValueFactory { p -> SimpleStringProperty(p.value.c) }
